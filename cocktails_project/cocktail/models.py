@@ -50,16 +50,18 @@ class Cocktail(models.Model):
 
 class Comment(models.Model):
     ID = models.AutoField(primary_key=True)
-    '''user_id= models.ForeignKey(User)
-    cocktail_id = models.ForeignKey(Cocktail)'''
-    comment_text = models.CharField(max_length = 256)
+    user_id= models.ForeignKey(Bartender)
+    cocktail_id = models.ForeignKey(Cocktail)
+    comment_title = models.CharField(max_length = 32, default = "")
+    comment_text = models.CharField(max_length = 256, default = "")
+    date_added = models.DateField(auto_now = False, auto_now_add = True, default = datetime.date.today())
 
     def __unicode__(self):
         return self.name
 
 class Brand(models.Model):
     ID = models.AutoField(primary_key = True)
-    brand_name = models.CharField(max_length = 64)
+    brand_name = models.CharField(max_length = 64, default = "")
 
     def __unicode__(self):
         return self.brand_name
@@ -67,11 +69,12 @@ class Brand(models.Model):
 
 class Advert(models.Model):
     ID = models.AutoField(primary_key=True)
-    '''brand_id = models.ForeignKey(Brand)
-    image = models.CharField(max_length =256)
-    date_added = models.DateField(auto_now = False, auto_now_add = True)
-    date_to_expire = models.DateField()'''
+    brand_id = models.ForeignKey(Brand)
+    advert_title = models.CharField(max_length = 32, default = "")
+    advert_image = models.CharField(max_length = 256, default = "")
+    date_added = models.DateField(auto_now = False, auto_now_add = True, default = datetime.date.today())
+    date_to_expire = models.DateField()
 
     def __unicode__(self):
-        return self.ID
+        return self.advert_title
     

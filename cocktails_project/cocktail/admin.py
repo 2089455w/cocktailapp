@@ -14,6 +14,14 @@ class CocktailTastePaletteAdmin(admin.ModelAdmin):
 class CocktailBaseAdmin(admin.ModelAdmin):
     list_display = ( 'ID', 'name', )
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ( 'ID', 'user_id', 'cocktail_id', 'comment_title', 'comment_text' )
+
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ( 'ID', 'brand_name' )
+
+class AdvertAdmin(admin.ModelAdmin):
+    list_display = ( 'ID', 'brand_id', 'advert_title', 'advert_image', 'date_added', 'date_added', 'date_to_expire' )
 
 admin.site.register(Cocktail, CocktailAdmin)
 admin.site.register(CocktailTastePalette, CocktailTastePaletteAdmin)
@@ -21,9 +29,10 @@ admin.site.register(CocktailBase, CocktailBaseAdmin)
 
 admin.site.register(Bartender, BartenderAdmin)
 
-admin.site.register(Comment)
-admin.site.register(Brand)
-admin.site.register(Advert)
+admin.site.register(Comment, CommentAdmin)
+
+admin.site.register(Brand, BrandAdmin)
+admin.site.register(Advert, AdvertAdmin)
 
 
 
