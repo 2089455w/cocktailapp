@@ -1,5 +1,6 @@
-
 <!DOCTYPE html>
+
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,8 +9,12 @@
     <meta name="author" content="Cocktail Masters Group">
 
     <!-- Stylesheets -->
-    <link href="css/bootstrap.css" rel="stylesheet">
- 
+   <link href="css/bootstrap.css" rel="stylesheet"> 
+   
+<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+
+
+
     </head>
 
     <body id="page-top" class="index" >   
@@ -22,9 +27,9 @@
 
 <ul class="nav nav-tabs">
 <ul class="nav navbar-nav navbar-right">
-  <li role="presentation" class="active"><a href="index.html">Home</a></li>
-  <li role="presentation"><a href="profile.html">Profile</a></li>
-  <li role="presentation"><a href="search.html">Cocktails</a></li>
+  <li role="presentation" class="active"><a href="{% url 'index' %}">Home</a></li>
+  <li role="presentation"><a href="{% url 'profile' %}">Profile</a></li>
+  <li role="presentation"><a href="{% url 'search' %}">Cocktails</a></li>
   <li role="presentation" style ="margin-top: 12px">
 <!-- Button trigger modal -->
 <button type="button"  data-toggle="modal" data-target="#myModal">

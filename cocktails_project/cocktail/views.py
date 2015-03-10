@@ -16,3 +16,6 @@ def profile(request):
 
 def search(request):
     return render(request, 'search.html', {})
+
+def base(request):
+    return render(request, 'base.html', {})
